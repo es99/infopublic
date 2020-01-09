@@ -22,15 +22,15 @@
       $id_contador= $_POST['id_contador'];
 
       echo 'Dados inseridos na tabela: <br />';
-      echo 'lugarID: ' . $id_unidade . '<br />';
+      echo 'Banco_CTBP: ' . $id_unidade . '<br />';
       echo 'unidade: ' . $unidade . '<br />';
       echo 'servidor: ' . $servidor . '<br />';
       echo 'contadorID: ' . $id_contador . '<br />';
 
 
-      $query = "INSERT INTO lugares (lugarID, unidade, servidor, contadorID) VALUES ('$id_unidade', '$unidade', '$servidor', '$id_contador')";
+      $query = "INSERT INTO lugares (Banco_CTBP, unidade, servidor, contadorID) VALUES ('$id_unidade', '$unidade', '$servidor', '$id_contador')";
 
-      $result = mysqli_query($dbc, $query) or die('Erro de inserção no banco de dados');
+      $result = mysqli_query($dbc, $query) or die('Erro de inserção no banco de dados, erro: ' . $result);
 
       mysqli_close($dbc);
     ?>
