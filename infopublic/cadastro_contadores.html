@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cadastro de contadores</title>
+  </head>
+  <body>
+    <h1 style="text-align:center;">Cadastro de contadores</h1>
+    <hr>
+    <form action="cadastro_contador.php" method="POST">
+
+      <label for="nome">Nome do contador*:</label>
+      <input type="text" name="nome" id="nome">
+
+      <label for="sobrenome">Sobrenome:</label>
+      <input type="text" name="sobrenome" id="sobrenome">
+
+      <label for="cpf">CPF*:</label>
+      <input type="text" name="cpf" id="cpf" value="000.000.000-00">
+
+      <label for="contador-pass">Senha RDP:</label>
+      <input type="text" id="contador-pass" name="contador-pass"><br />
+
+      <input type="submit" value="Cadastrar" name="submit">
+    </form><br />
+      <a href="../index.html">Voltar</a>
+  </body>
+</html>
