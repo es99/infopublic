@@ -31,6 +31,7 @@
 
       $query = "SELECT Banco_CTBP, unidade, contadorID FROM lugares WHERE servidor='antigo_ts'";
       $result = mysqli_query($dbc, $query);
+	  $numero_entidades = mysqli_num_rows($result);
 
       if(mysqli_num_rows($result) > 0){
         echo "<table><tr><th>CTBP</th><th>Entidade</th><th>ID do Contador</th></tr>";
@@ -46,6 +47,8 @@
 
       ?>
     <hr>
+		<p><?php echo "Número de entidades encontradas: " . $numero_entidades; ?></p>
+	<hr>
     <a href="../exibir_dados.html">Voltar</a><br />
     <a href="../../index.html">Início</a>
   </body>
