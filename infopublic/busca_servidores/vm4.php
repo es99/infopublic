@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<style>
 			table, tr {
-				width: 100;
+				width: 100%;
 				text-align: center;
 			}
 			table, th, td {
@@ -21,27 +21,27 @@
 				$user = "engels";
 				$senha = "engelsink666";
 				$banco = "infopublic";
-				
+
 				$dbc = mysqli_connect($local, $user, $senha, $banco);
-				
 				if(!$dbc){
-					die("Falha ao conectar-se com o banco de dados: " . $(mysqli_connect_error()));
+					die("Erro ao conectar-se com o servidor de banco: " . mysqli_connect_error());
 				}
-				
+
 				$query = "SELECT Banco_CTBP, unidade, contadorID FROM lugares WHERE servidor='vm_10.0.6.4'";
-				
+
 				$result = mysqli_query($dbc, $query);
-				
+
 				if(mysqli_num_rows($result) > 0){
-					echo "<table><tr><td>CTBP</td><td>Entidade</td><td>ID do Contador</td></tr>";
-					while($row = mysql_fetch_assoc($result)){
-						echo "<tr><td>" . $row['Banco_CTBP'] . "</td><td>" . $row['unidade'] . "</td><td>" . $row['contadorID'] . "</td></tr>";
+					echo "<table><tr><th>CTBP</th><th>Entidade</th><th>ID do Contador</th></tr>";
+						while($row = mysqli_fetch_assoc($result)){
+							echo "<tr><td>" . $row['Banco_CTBP'] . "</td><td>" . $row['unidade'] . "</td><td>" . $row['contadorID'] . "</td></tr>";
 						}
-					echo "</table>";
-					}else{
-						echo "0 resultados para a busca.";
-					}
-				mysqli_close($dbc);
+						echo "</table>";
+						}else {
+							echo "0 resultados para a busca.";
+						}
+
+		mysqli_close($dbc);
 			?>
 		<hr>
 		<a href="../exibir_dados.html">Voltar</a><br />
