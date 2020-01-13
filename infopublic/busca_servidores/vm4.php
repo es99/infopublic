@@ -47,6 +47,26 @@
 		<hr>
 			<p><?php echo "Número de entidades encontradas: " . $numero_entidades; ?></p>
 		<hr>
+			<h2>Usuários por entidade</h2>
+		<hr>
+			<form action="./usuarios_entidade/vm4_usuarios.php" method="POST">
+				<select name="entidades">
+					<option value="1">PM Alagoa Nova</option>
+					<option value="39">PM Assunção</option>
+					<option value="40">PM Alagoa Grande</option>
+					<option value="41">PM Riacho de Santo Antônio</option>
+					<option value="42">PM Umbuzeiro</option>
+					<option value="43">PM Camalaú</option>
+					<option value="44">PM Equador</option>
+					<option value="45">PM S. Sebastião de Lagoa de Roça</option>
+					<option value="46">PM Massaranduba</option>
+					<option value="48">PM Livramento</option>
+					<option value="49">PM Aroeiras</option>
+					<option value="51">PM Parari</option>
+				</select><br />
+				<input type="submit" value="Pesquisar">	
+			</form>
+		<hr>
 		<a href="../exibir_dados.html">Voltar</a><br />
 		<a href="../../index.html">Início</a>
 	</body>
