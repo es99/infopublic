@@ -11,7 +11,7 @@
       <p>Sistema de informação sobre entidades, contadores, usuários e procedimentos da Infopublic</p>
       <nav>
         <ul>
-          <li><a href="./infopublic/cadastro_contadores.html">Contadores</a></li>
+          <li><a href="./infopublic/contadores.html">Contadores</a></li>
           <li><a href="./infopublic/cadastro_unidade.html">Entidades</a></li>
           <li><a href="./infopublic/exibir_dados.html">Buscas</a></li>
           <li><a href="">Servidores</a></li>
@@ -19,6 +19,19 @@
       </nav>
     </header>
 
+	<main>
+		<section>
+			<h2>Busca rápida</h2>
+			<article>
+				<h3>Entidade:</h3>
+				<form action="retorna_entidade.php" method="POST">
+					<label for="entidade">Digite o nome da entidade:</label>
+					<input type="text" id="entidade" name="entidade"><br />
+					<input type="submit" value="Pesquisar">
+				</form>
+			</article>
+		</section>
+	</main>
 
     <footer>
       <nav>

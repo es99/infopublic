@@ -15,12 +15,12 @@ header a{
   color: black;
 }
 
-header a:hover{
-  color: white;
-}
-
-header li:hover{
+header li a:hover{
   background: #3333cc;
   border: 1px solid black;
   color: white;
+}
+
+footer {
+	text-align: center;
 }
