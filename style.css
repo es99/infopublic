@@ -1,0 +1,26 @@
+header {
+  text-align: center;
+}
+header ul {
+  text-align: center;
+}
+header li {
+  background: #66ffff;
+  display: inline-block;
+  padding: 14px;
+  border-radius: 5px;
+}
+
+header a{
+  color: black;
+}
+
+header a:hover{
+  color: white;
+}
+
+header li:hover{
+  background: #3333cc;
+  border: 1px solid black;
+  color: white;
+}
