@@ -4,6 +4,16 @@
     <meta charset="utf-8">
     <title>Wiki-Infopublic</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+			table, tr {
+  				width: 100%;
+  				text-align: center;
+			}
+			table, th, td {
+  				border: 1px solid black;
+  				border-collapse: collapse;
+			}
+	</style>
   </head>
   <body>
     <header>

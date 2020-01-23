@@ -21,6 +21,19 @@ header li a:hover{
   color: white;
 }
 
-footer {
+footer li{
 	text-align: center;
+  background: #66ffff;
+  display: inline-block;
+  padding: 12px;
+  border-top-color: 3px;
+}
+
+table, tr {
+  width: 100%;
+  text-align: center;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
