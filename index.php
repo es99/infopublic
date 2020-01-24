@@ -11,8 +11,7 @@
       <p>Sistema de informação sobre entidades, contadores, usuários e procedimentos da Infopublic</p>
       <nav>
         <ul>
-          <li><a href="./infopublic/contadores.html">Contadores</a></li>
-          <li><a href="./infopublic/cadastro_unidade.html">Entidades</a></li>
+          <li><a href="./infopublic/exibir_contadores.php">Contadores</a></li>
           <li><a href="./infopublic/exibir_dados.html">Buscas</a></li>
           <li><a href="">Servidores</a></li>
         </ul>
@@ -34,6 +33,24 @@
 		<section>
 			<h2>Informes</h2>
 			<p>Quadro de avisos relacionados ao suporte técnico Infopublic</p>
+      <article>
+        <?php include './includes/conexao.php'; ?>
+        <?php
+            $query = "SELECT texto, data FROM informes";
+            $result = mysqli_query($conn, $query);
+
+            if(mysqli_num_rows($result) > 0){
+              echo "<table><tr><th>Painel</th><th>Data</th></tr>";
+              while($row = mysqli_fetch_array($result)){
+                echo "<tr><td>" . $row['texto'] . "</td><td>" . $row['data'] . "</td></tr>";
+              }
+              echo "</table>";
+            }else{
+              echo "<p>Sem informes no momento.</p>";
+            }
+            mysqli_close($conn);
+        ?>
+      </article>
 		</section>
 	</main>
 

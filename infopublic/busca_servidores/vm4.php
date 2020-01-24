@@ -64,10 +64,10 @@
 					<option value="49">PM Aroeiras</option>
 					<option value="51">PM Parari</option>
 				</select><br />
-				<input type="submit" value="Pesquisar">	
+				<input type="submit" value="Pesquisar">
 			</form>
 		<hr>
 		<a href="../exibir_dados.html">Voltar</a><br />
-		<a href="../../index.html">Início</a>
+		<a href="../../index.php">Início</a>
 	</body>
 </html>

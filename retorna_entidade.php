@@ -25,19 +25,11 @@
 		<section>
 			<h2>Resultado da busca:</h2>
 			<article>
+        <?php include './includes/conexao.php'; ?>
 				<?php
-					$user = 'engels';
-					$local = 'localhost';
-					$database = 'infopublic';
-					$senha = 'engelsink666';
-					$entidade = $_POST['entidade'];
-					
-					$con = mysqli_connect($local, $user, $senha, $database);
-					if(!$con){
-						die('Erro ao conectar-se com o banco de dados: ' . $mysqli_error());
-					}
+          $entidade = $_POST['entidade'];
 					$query = "SELECT * FROM lugares WHERE unidade LIKE '%{$entidade}%'";
-					$result = mysqli_query($con, $query);
+					$result = mysqli_query($conn, $query);
 					if(mysqli_num_rows($result) > 0){
 						echo "<table><tr><th>Banco_CTBP</th><th>Servidor</th><th>Contador ID</th><th>Entidade</th></tr>";
 						while($row = mysqli_fetch_assoc($result)){
@@ -47,8 +39,8 @@
 					}else{
 						echo "0 resultados para a busca!";
 					}
-					mysqli_close($con);
-					
+					mysqli_close($conn);
+
 				?>
 			</article>
 		</section>
@@ -58,7 +50,7 @@
 		<p>Infopublic - Sistemas para orgãos públicos</p>
 		<nav>
         <ul>
-          <li><a href="index.html">Voltar</a></li>
+          <li><a href="index.php">Voltar</a></li>
         </ul>
       </nav>
       <p>&copy; engels@infopublic.com.br</p>

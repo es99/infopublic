@@ -46,8 +46,7 @@
 		<footer>
 			<nav>
 				<ul>
-					<li><a href="contadores.php">Voltar</a></li>
-					<li><a href="../index.html">Início</a></li>
+					<li><a href="../index.php">Voltar</a></li>
 				</ul>
 			</nav>
 			<?php include '../includes/footer.php'; ?>

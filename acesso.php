@@ -12,28 +12,30 @@
 	</header>
 	<main>
 		<section>
-			<p>Entre com seus dados de acesso:</p>
 			<article>
 				<?php include './includes/conexao.php'; ?>
 				<?php
 					$login = $_POST['login'];
 					$senha = $_POST['senha'];
 
-					$query1 = "SELECT login FROM administradores WHERE login='{$login}'";
-					$query2 = "SELECT senha FROM administradores WHERE senha='{$senha}'";
+					$query = "SELECT * FROM administradores WHERE login='{$login}'";
+					$result = mysqli_query($conn, $query);
 
-					$user = mysqli_query($conn, $query1);
-					$password = mysqli_query($conn, $query2);
-
-					echo "<p>login enviado pelo form: " . $login . "</p>";
-					echo "<p>senha enviada pelo form: " . $senha . "</p>";
-					echo "<p>user do banco: " . $user . "</p>";
-					echo "<p>password do banco: " . $password . "</p>";
-
-					if(($user == $login) && ($password == $senha)){
-						echo "<p>Login efetuado com sucesso!</p>"; 
+					if(mysqli_num_rows($result) > 0){
+						$row = mysqli_fetch_array($result);
+						if(($row['login'] == $login) && ($row['senha'] == $senha)){
+							echo "<p>" . "Login efetuado com sucesso!" . "</p>";
+							echo "<h3>" . "Escolha uma das opções abaixo:" . "</h3>";
+							echo "<nav><ul>";
+							echo "<li><a href='./infopublic/cadastro_unidade.html'>Cadastro de unidade</a></li>";
+							echo "<li><a href='./infopublic/cadastro_contadores.html'>Cadastro de contadores</a></li>";
+							echo "<li><a href='./infopublic/cadastro_informes.html'>Cadastrar informe</a></li>";
+							echo "</ul></nav>";
+						}else{
+							echo "<p>Usuário ou senha incorretos!</p>";
+						}
 					}else{
-						echo "<p style='color: red;'>O login falhou</p>";
+						echo "<p>Dados de administrador não encontrado!</p>";
 					}
 					mysqli_close($conn);
 				?>
@@ -43,7 +45,8 @@
 	<footer>
 		<nav>
 			<ul>
-				<li><a href="index.html">Início</a></li>
+				<li><a href="index.php">Início</a></li>
+				<li><a href="admin-area.html">Voltar</a></li>
 			</ul>
 		</nav>
 		<p>&copy; engels@infopublic.com.br</p>

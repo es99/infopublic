@@ -48,6 +48,6 @@
 			<p><?php echo "Número de entidades encontradas: " . $numero_entidades; ?></p>
 		<hr>
 		<a href="../exibir_dados.html">Voltar</a><br />
-		<a href="../../index.html">Início</a>
+		<a href="../../index.php">Início</a>
 	</body>
 </html>
