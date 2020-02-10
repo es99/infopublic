@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<header>
+			<h1>Wiki-Infopublic</h1>
+      		<p>Sistema de informação sobre entidades, contadores, usuários e procedimentos da Infopublic</p>
+		</header>
+		<main>
+			<section>
+				<h2>Pesquisar usuários por entidade</h2>
+				<article>
+					<h3>Selecione abaixo a entidade para exibir usuários</h3>
+					<form action="usuarios_entidade.php" method="POST">
+						<label for="entidade">Entidade: </label>
+						<input type="text" id="entidade" name="entidade"><br />
+						<input type="submit" value="Pesquisar">
+					</form>
+				</article>
+			</section>
+		</main>
+		<footer>
+			<nav>
+				<ul>
+				<li><a href="index.php">Início</a></li>
+				</ul>
+			</nav>
+			<p>&copy; engels@infopublicpb.com.br</p>
+		</footer>
+	</body>
+</html>

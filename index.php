@@ -14,21 +14,30 @@
           <li><a href="./infopublic/exibir_contadores.php">Contadores</a></li>
           <li><a href="./infopublic/exibir_dados.html">Buscas</a></li>
           <li><a href="cadastro_servidores.html">Servidores</a></li>
+          <li><a href="usuarios.html">Usuários</a></li>
         </ul>
       </nav>
     </header>
 
 	<main>
 		<section>
-			<h2>Busca rápida</h2>
+			<h2>Busca rápida PJCTB/PJFOLHA</h2>
 			<article>
-				<h3>Entidade:</h3>
+				<h3>Entidade Contabilidade: </h3>
 				<form action="retorna_entidade.php" method="POST">
 					<label for="entidade">Digite o nome da entidade:</label>
 					<input type="text" id="entidade" name="entidade"><br />
 					<input type="submit" value="Pesquisar">
 				</form>
 			</article>
+      <article>
+        <h3>Entidade Folha: </h3>
+        <form action="retorna_entidade_folha.php" method="POST">
+          <label for="entidade_folha">Digite o nome da entidade: </label>
+          <input type="text" id="entidade_folha" name="entidade_folha"><br />
+          <input type="submit" value="Pesquisar">
+        </form>
+      </article>
 		</section>
 		<section>
 			<h2>Informes</h2>

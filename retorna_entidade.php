@@ -25,15 +25,20 @@
 		<section>
 			<h2>Resultado da busca:</h2>
 			<article>
-        <?php include './includes/conexao.php'; ?>
+        		<?php include './includes/conexao.php'; ?>
 				<?php
-          $entidade = $_POST['entidade'];
-					$query = "SELECT * FROM lugares WHERE unidade LIKE '%{$entidade}%'";
+          			$entidade = $_POST['entidade'];
+
+					$query = "SELECT L.Banco_CTBP, L.servidor, C.nome, L.unidade 
+					FROM lugares as L JOIN contadores as C 
+					ON L.contadorID = C.contadorID  
+					WHERE L.unidade LIKE '%{$entidade}%'";
+
 					$result = mysqli_query($conn, $query);
 					if(mysqli_num_rows($result) > 0){
-						echo "<table><tr><th>Banco_CTBP</th><th>Servidor</th><th>Contador ID</th><th>Entidade</th></tr>";
+						echo "<table><tr><th>Banco_CTBP</th><th>Servidor</th><th>Contador</th><th>Entidade</th></tr>";
 						while($row = mysqli_fetch_assoc($result)){
-							echo "<tr><td>" . $row['Banco_CTBP'] . "</td><td>" . $row['servidor'] . "</td><td>" . $row['contadorID'] . "</td><td>" . $row['unidade'] . "</td></tr>";
+							echo "<tr><td>" . $row['Banco_CTBP'] . "</td><td>" . $row['servidor'] . "</td><td>" . $row['nome'] . "</td><td>" . $row['unidade'] . "</td></tr>";
 						}
 						echo "</table>";
 					}else{
