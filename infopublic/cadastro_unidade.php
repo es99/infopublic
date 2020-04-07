@@ -8,13 +8,9 @@
     <h1 style="text-align:center;">Cadastro de unidades</h1>
     <hr>
     <h2 style="text-align:center;">Unidade cadastrada com sucesso!</h2><br />
+    <?php include '../includes/conexao.php'; ?>
     <?php
-      $banco = 'infopublic';
-      $usuario = 'engels';
-      $senha = 'engelsink666';
-      $local = 'localhost';
-
-      $dbc = mysqli_connect($local, $usuario, $senha, $banco) or die('Falha ao se conectar com o banco de dados!');
+      
 
       $id_unidade= $_POST['id'];
       $unidade= $_POST['nome'];
@@ -30,9 +26,9 @@
 
       $query = "INSERT INTO lugares (Banco_CTBP, unidade, servidor, contadorID) VALUES ('$id_unidade', '$unidade', '$servidor', '$id_contador')";
 
-      $result = mysqli_query($dbc, $query) or die('Erro de inserção no banco de dados, erro: ' . $result);
+      $result = mysqli_query($conn, $query) or die('Erro de inserção no banco de dados, erro: ' . $result);
 
-      mysqli_close($dbc);
+      mysqli_close($conn);
     ?>
     <a href="cadastro_unidade.html">Voltar</a><br />
   </body>

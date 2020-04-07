@@ -2,8 +2,7 @@
 <html>
 	<head>
 		<title></title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta charset="ISO-8859-1">
 		<style>
 		table, tr {
   				width: 100%;
@@ -31,7 +30,7 @@
 
 						echo "<h3>Resultado para a entidade selecionada: " . $entidade . "</h3>";
 
-						$query = "SELECT usuario.cpf, usuario.user, entidade_usuario.entidade, entidade.nome, entidade.responsavel
+						$query = "SELECT usuario.cpf, usuario.user, usuario.email, entidade_usuario.entidade, entidade.nome, entidade.responsavel
   									FROM usuario
     								INNER JOIN entidade_usuario ON entidade_usuario.cpf = usuario.cpf
     								INNER JOIN entidade ON entidade.codigo = entidade_usuario.entidade
@@ -40,9 +39,9 @@
 						$result = mysqli_query($conn, $query);
 						
 						if(mysqli_num_rows($result) > 0){
-							echo "<table><tr><th>CPF</th><th>Nome</th><th>Código da entidade</th><th>Entidade</th><th>Responsável</th></tr>";
+							echo "<table><tr><th>CPF</th><th>Nome</th><th>Email</th><th>Código da entidade</th><th>Entidade</th><th>Responsável</th></tr>";
 						while($row = mysqli_fetch_assoc($result)){
-							echo "<tr><td>" . $row['cpf'] . "</td><td>" . $row['user'] . "</td><td>" . $row['entidade'] . "</td><td>" . $row['nome'] . "</td><td>" . $row['responsavel'] . "</td></tr>";
+							echo "<tr><td>" . $row['cpf'] . "</td><td>" . $row['user'] . "</td><td>" . $row['email'] . "</td><td>" . $row['entidade'] . "</td><td>" . $row['nome'] . "</td><td>" . $row['responsavel'] . "</td></tr>";
 						}
 						echo "</table>";
 					}else{

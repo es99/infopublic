@@ -13,7 +13,7 @@
         <ul>
           <li><a href="./infopublic/exibir_contadores.php">Contadores</a></li>
           <li><a href="./infopublic/exibir_dados.html">Buscas</a></li>
-          <li><a href="cadastro_servidores.html">Servidores</a></li>
+          <li><a href="cadastros.html">Cadastros</a></li>
           <li><a href="usuarios.html">Usuários</a></li>
         </ul>
       </nav>
